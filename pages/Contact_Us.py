@@ -23,5 +23,9 @@ topic: {topic}
 
 {actual_message}
         """
-        se.send(message)
-        st.info('Mail sent successfully!!')
+        if actual_message != '' and send_by != '':
+            se.send(message)
+            st.info('Mail sent successfully!!')
+        else:
+            st.info('Insert valid email-id /content')
+
