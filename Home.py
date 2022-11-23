@@ -20,17 +20,17 @@ with col2:
 
 st.write('Below you can find some of the apps I built in python. Feel free to contact me ')
 
-col3, col4 = st.columns([2, 2])
+col3,empty_col,  col4 = st.columns([3, 1, 3])
 with col3:
     for index, row in df[:10].iterrows():
         st.header(row['title'])
         st.subheader(row['description'])
         img = row['image']
         st.image(f'images/{img}')
-        st.write(f"[Source Code]({row['url']})")
+        st.write(f"[Click to open]({row['url']})")
 with col4:
     for index, row in df[10:].iterrows():
         st.header(row['title'])
         img = row['image']
         st.image(f'images/{img}')
-        st.write(f"[Source Code]({row['url']})")
+        st.write(f"[Click to open]({row['url']})")
