@@ -11,3 +11,9 @@ st.write("""According to the Pew Research Center, 97% of adult Americans have a 
         our five best picks based on their features, pricing, ease of use, setup process and customer service.""")
 
 emp_df = pd.read_csv('data.csv')
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    for index, row in emp_df[:4].iterrows():
+        st.header(row['first_name'])
